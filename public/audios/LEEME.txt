@@ -1,0 +1,8 @@
+Pon aquí tus archivos de audio (.mp3).
+
+Los nombres deben coincidir EXACTAMENTE con los que están en src/App.jsx:
+  - dormirsergio.mp3
+  - 6segmarcelo.mp3
+
+Sin espacios, sin tildes, mismas minúsculas.
+Si cambias el nombre del archivo, cámbialo también en el campo url de App.jsx.
