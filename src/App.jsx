@@ -41,25 +41,34 @@ const FMT = { audio: "Audio", video: "Video", texto: "Lectura" };
 const SESSIONS = [
   // FASE PILOTO: todas las sesiones usan tu audio audiogracias.mp3 (carpeta public/audios).
   // Para poner tu audio real: cambia el enlace de  url:  por el tuyo (sube el .mp3 a public/audios y usa "/audios/tuarchivo.mp3").
-  { id: 1, t: "Recibe el día despierto", p: "mental", m: "mañana", f: "audio", d: 5, premium: false, url: "/audios/audiogracias.mp3", desc: "Aclara la mente antes de que el día te llene la cabeza." },
-  { id: 2, t: "Deja pasar los pensamientos", p: "mental", m: "pausa", f: "audio", d: 7, premium: true, url: "/audios/audiogracias.mp3", desc: "Como hojas en un río: míralos pasar sin sujetarlos." },
-  { id: 3, t: "Raíces para concentrarte", p: "mental", m: "tarde", f: "audio", d: 10, premium: true, url: "/audios/audiogracias.mp3", desc: "Vuelve al foco cuando la tarde te dispersa." },
-  { id: 4, t: "Silencio antes de dormir", p: "mental", m: "noche", f: "audio", d: 4, premium: false, url: "/audios/audiogracias.mp3", desc: "Una pausa breve para bajar el ruido mental." },
+  // mood: a qué estados de ánimo ayuda esta sesión (para sugerencias personalizadas).
+  { id: 1, t: "Recibe el día despierto", p: "mental", m: "mañana", f: "audio", d: 5, premium: false, url: "/audios/audiogracias.mp3", mood: ["Agotado", "Neutral"], desc: "Aclara la mente antes de que el día te llene la cabeza." },
+  { id: 2, t: "Deja pasar los pensamientos", p: "mental", m: "pausa", f: "audio", d: 7, premium: true, url: "/audios/audiogracias.mp3", mood: ["Tenso"], desc: "Como hojas en un río: míralos pasar sin sujetarlos." },
+  { id: 3, t: "Raíces para concentrarte", p: "mental", m: "tarde", f: "audio", d: 10, premium: true, url: "/audios/audiogracias.mp3", mood: ["Neutral"], desc: "Vuelve al foco cuando la tarde te dispersa." },
+  { id: 4, t: "Silencio antes de dormir", p: "mental", m: "noche", f: "audio", d: 4, premium: false, url: "/audios/audiogracias.mp3", mood: ["Tenso", "Agotado"], desc: "Una pausa breve para bajar el ruido mental." },
+  { id: 17, t: "Una sola cosa a la vez", p: "mental", m: "tarde", f: "audio", d: 6, premium: false, url: "/audios/audiogracias.mp3", mood: ["Tenso", "Neutral"], desc: "Entrena tu atención en lo único que importa ahora." },
+  { id: 18, t: "Mente de cielo abierto", p: "mental", m: "pausa", f: "audio", d: 8, premium: true, url: "/audios/audiogracias.mp3", mood: ["Tranquilo", "Pleno"], desc: "Observa tus pensamientos como nubes que pasan." },
 
-  { id: 5, t: "Saluda lo que sientes", p: "emocional", m: "mañana", f: "audio", d: 6, premium: true, url: "/audios/audiogracias.mp3", desc: "Tu estrés trae un mensaje. Escúchalo sin miedo." },
-  { id: 6, t: "Respira la inquietud", p: "emocional", m: "pausa", f: "audio", d: 5, premium: false, url: "/audios/audiogracias.mp3", desc: "Calma el cuerpo cuando la ansiedad aprieta." },
-  { id: 7, t: "Carta a tu yo cansado", p: "emocional", m: "tarde", f: "audio", d: 8, premium: true, url: "/audios/audiogracias.mp3", desc: "Un momento de calma amable contigo mismo." },
-  { id: 8, t: "Tres gracias", p: "emocional", m: "noche", f: "audio", d: 3, premium: false, url: "/audios/audiogracias.mp3", desc: "Tres respiraciones, tres motivos, y a descansar." },
+  { id: 5, t: "Saluda lo que sientes", p: "emocional", m: "mañana", f: "audio", d: 6, premium: true, url: "/audios/audiogracias.mp3", mood: ["Tenso", "Neutral"], desc: "Tu estrés trae un mensaje. Escúchalo sin miedo." },
+  { id: 6, t: "Respira la inquietud", p: "emocional", m: "pausa", f: "audio", d: 5, premium: false, url: "/audios/audiogracias.mp3", mood: ["Tenso", "Agotado"], desc: "Calma el cuerpo cuando la ansiedad aprieta." },
+  { id: 7, t: "Carta a tu yo cansado", p: "emocional", m: "tarde", f: "audio", d: 8, premium: true, url: "/audios/audiogracias.mp3", mood: ["Agotado"], desc: "Un momento de calma amable contigo mismo." },
+  { id: 8, t: "Tres gracias", p: "emocional", m: "noche", f: "audio", d: 3, premium: false, url: "/audios/audiogracias.mp3", mood: ["Tranquilo", "Pleno"], desc: "Tres respiraciones, tres motivos, y a descansar." },
+  { id: 19, t: "Abraza al que fuiste hoy", p: "emocional", m: "noche", f: "audio", d: 7, premium: true, url: "/audios/audiogracias.mp3", mood: ["Agotado", "Tenso"], desc: "Cierra el día con autocompasión, sin juzgarte." },
+  { id: 20, t: "Suelta lo que no controlas", p: "emocional", m: "pausa", f: "audio", d: 9, premium: true, url: "/audios/audiogracias.mp3", mood: ["Tenso"], desc: "Distingue lo que está en tus manos de lo que no." },
 
-  { id: 9, t: "Despierta el cuerpo", p: "fisico", m: "mañana", f: "audio", d: 8, premium: true, url: "/audios/audiogracias.mp3", desc: "Activa tu cuerpo como una planta al sol." },
-  { id: 10, t: "Respiración 4·7·8", p: "fisico", m: "pausa", f: "audio", d: 4, premium: false, url: "/audios/audiogracias.mp3", desc: "La técnica que serena el sistema nervioso en minutos." },
-  { id: 11, t: "Suelta de la cabeza a los pies", p: "fisico", m: "tarde", f: "audio", d: 12, premium: true, url: "/audios/audiogracias.mp3", desc: "Relajación muscular progresiva, capa por capa." },
-  { id: 12, t: "Bosque para dormir", p: "fisico", m: "noche", f: "audio", d: 15, premium: true, url: "/audios/audiogracias.mp3", desc: "Sonidos que te llevan al sueño profundo." },
+  { id: 9, t: "Despierta el cuerpo", p: "fisico", m: "mañana", f: "audio", d: 8, premium: true, url: "/audios/audiogracias.mp3", mood: ["Agotado", "Neutral"], desc: "Activa tu cuerpo como una planta al sol." },
+  { id: 10, t: "Respiración 4·7·8", p: "fisico", m: "pausa", f: "audio", d: 4, premium: false, url: "/audios/audiogracias.mp3", mood: ["Tenso", "Agotado"], desc: "La técnica que serena el sistema nervioso en minutos." },
+  { id: 11, t: "Suelta de la cabeza a los pies", p: "fisico", m: "tarde", f: "audio", d: 12, premium: true, url: "/audios/audiogracias.mp3", mood: ["Tenso"], desc: "Relajación muscular progresiva, capa por capa." },
+  { id: 12, t: "Bosque para dormir", p: "fisico", m: "noche", f: "audio", d: 15, premium: true, url: "/audios/audiogracias.mp3", mood: ["Agotado", "Tranquilo"], desc: "Sonidos que te llevan al sueño profundo." },
+  { id: 21, t: "Estira y respira", p: "fisico", m: "mañana", f: "audio", d: 6, premium: false, url: "/audios/audiogracias.mp3", mood: ["Neutral", "Pleno"], desc: "Despereza el cuerpo con movimientos lentos." },
+  { id: 22, t: "Escaneo corporal", p: "fisico", m: "noche", f: "audio", d: 11, premium: true, url: "/audios/audiogracias.mp3", mood: ["Tenso", "Agotado"], desc: "Recorre tu cuerpo y libera la tensión escondida." },
 
-  { id: 13, t: "Savia de la mañana", p: "energetico", m: "mañana", f: "audio", d: 6, premium: false, url: "/audios/audiogracias.mp3", desc: "Despierta tu energía vital para el día que empieza." },
-  { id: 14, t: "Vuelve a tu centro", p: "energetico", m: "pausa", f: "audio", d: 10, premium: true, url: "/audios/audiogracias.mp3", desc: "Una pausa para reequilibrar tu energía y centrarte." },
-  { id: 15, t: "Segundo aire", p: "energetico", m: "tarde", f: "audio", d: 9, premium: true, url: "/audios/audiogracias.mp3", desc: "Reactívate cuando la tarde te pesa." },
-  { id: 16, t: "Apaga el día con calma", p: "energetico", m: "noche", f: "audio", d: 7, premium: true, url: "/audios/audiogracias.mp3", desc: "Baja revoluciones y suelta la energía acumulada." },
+  { id: 13, t: "Savia de la mañana", p: "energetico", m: "mañana", f: "audio", d: 6, premium: false, url: "/audios/audiogracias.mp3", mood: ["Agotado", "Neutral"], desc: "Despierta tu energía vital para el día que empieza." },
+  { id: 14, t: "Vuelve a tu centro", p: "energetico", m: "pausa", f: "audio", d: 10, premium: true, url: "/audios/audiogracias.mp3", mood: ["Tenso", "Neutral"], desc: "Una pausa para reequilibrar tu energía y centrarte." },
+  { id: 15, t: "Segundo aire", p: "energetico", m: "tarde", f: "audio", d: 9, premium: true, url: "/audios/audiogracias.mp3", mood: ["Agotado"], desc: "Reactívate cuando la tarde te pesa." },
+  { id: 16, t: "Apaga el día con calma", p: "energetico", m: "noche", f: "audio", d: 7, premium: true, url: "/audios/audiogracias.mp3", mood: ["Tranquilo"], desc: "Baja revoluciones y suelta la energía acumulada." },
+  { id: 23, t: "Chispa de gratitud", p: "energetico", m: "mañana", f: "audio", d: 5, premium: false, url: "/audios/audiogracias.mp3", mood: ["Tranquilo", "Pleno"], desc: "Enciende el día desde lo que ya tienes." },
+  { id: 24, t: "Recarga en 3 minutos", p: "energetico", m: "pausa", f: "audio", d: 3, premium: false, url: "/audios/audiogracias.mp3", mood: ["Agotado", "Neutral"], desc: "Una microrrecarga para seguir con foco." },
 ];
 
 const MOMENTS = [
@@ -68,6 +77,14 @@ const MOMENTS = [
   { key: "tarde", label: "Tarde", sub: "Reenfoca", emoji: "✿" },
   { key: "noche", label: "Noche", sub: "Descansa", emoji: "☾" },
 ];
+
+// Conecta la meta elegida en el onboarding con el pilar que se prioriza en el Inicio
+const GOAL_MAP = {
+  calma: { pillar: "emocional", label: "tu calma" },
+  dormir: { pillar: "fisico", label: "tu descanso" },
+  foco: { pillar: "mental", label: "tu foco" },
+  energia: { pillar: "energetico", label: "tu energía" },
+};
 
 /* ============================ HELPERS ============================ */
 const grad = (c) => `linear-gradient(135deg, ${c[0]}, ${c[1]})`;
@@ -93,11 +110,13 @@ const Leaf = ({ size = 60, color = "#8DB46A", style }) => (
 export default function App() {
   const [onboarded, setOnboarded] = useState(false);
   const [obStep, setObStep] = useState(0);
+  const [name, setName] = useState("");
   const [mood, setMood] = useState(null);
   const [goal, setGoal] = useState(null);
 
   const [tab, setTab] = useState("home");
   const [player, setPlayer] = useState(null);
+  const [detail, setDetail] = useState(null);
   const [paywall, setPaywall] = useState(false);
   const [pro, setPro] = useState(false);
 
@@ -105,9 +124,14 @@ export default function App() {
   const [minutes, setMinutes] = useState(86);
   const [done, setDone] = useState(12);
 
+  // Abrir una sesión muestra primero su pantalla de detalle (o el paywall si es premium)
   const openSession = (s) => {
     if (s.premium && !pro) setPaywall(true);
-    else setPlayer(s);
+    else setDetail(s);
+  };
+  const startSession = (s) => {
+    setDetail(null);
+    setPlayer(s);
   };
   const completeSession = (s) => {
     setMinutes((m) => m + s.d);
@@ -127,15 +151,16 @@ export default function App() {
 
         <div style={shell.screen}>
           {!onboarded ? (
-            <Onboarding step={obStep} setStep={setObStep} mood={mood} setMood={setMood} goal={goal} setGoal={setGoal} finish={() => setOnboarded(true)} />
+            <Onboarding step={obStep} setStep={setObStep} name={name} setName={setName} mood={mood} setMood={setMood} goal={goal} setGoal={setGoal} finish={() => setOnboarded(true)} />
           ) : (
             <>
-              {tab === "home" && <Home goal={goal} streak={streak} minutes={minutes} done={done} pro={pro} openSession={openSession} goExplore={() => setTab("explore")} openPaywall={() => setPaywall(true)} />}
+              {tab === "home" && <Home name={name} goal={goal} mood={mood} streak={streak} minutes={minutes} done={done} pro={pro} openSession={openSession} goExplore={() => setTab("explore")} openPaywall={() => setPaywall(true)} />}
               {tab === "explore" && <Explore pro={pro} openSession={openSession} />}
               {tab === "profile" && <Profile streak={streak} minutes={minutes} done={done} pro={pro} openPaywall={() => setPaywall(true)} />}
               <BottomNav tab={tab} setTab={setTab} />
             </>
           )}
+          {detail && <Detail session={detail} onClose={() => setDetail(null)} onStart={startSession} />}
           {player && <Player session={player} onClose={() => setPlayer(null)} onComplete={completeSession} />}
           {paywall && <Paywall onClose={() => setPaywall(false)} onSubscribe={() => { setPro(true); setPaywall(false); }} />}
         </div>
@@ -145,7 +170,7 @@ export default function App() {
 }
 
 /* ============================ ONBOARDING ============================ */
-function Onboarding({ step, setStep, mood, setMood, goal, setGoal, finish }) {
+function Onboarding({ step, setStep, name, setName, mood, setMood, goal, setGoal, finish }) {
   const moods = ["Agotado", "Tenso", "Neutral", "Tranquilo", "Pleno"];
   const goals = [
     { k: "calma", t: "Encontrar calma", g: PILLARS.emocional.grad },
@@ -166,7 +191,13 @@ function Onboarding({ step, setStep, mood, setMood, goal, setGoal, finish }) {
           </div>
           <h1 style={ob.bigTitle}>Amigo<br />Estrés</h1>
           <p style={ob.lead}>Tu estrés no es tu enemigo. Es una señal. Aquí aprendes a escucharla y a volver a tu equilibrio — en pequeños momentos del día.</p>
-          <button style={btn.primary} onClick={() => setStep(1)}>Empezar</button>
+          <input
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="¿Cómo te llamas?"
+            style={ob.input}
+          />
+          <button style={{ ...btn.primary, opacity: name.trim() ? 1 : 0.4 }} disabled={!name.trim()} onClick={() => setStep(1)}>Empezar</button>
         </div>
       )}
 
@@ -202,15 +233,33 @@ function Onboarding({ step, setStep, mood, setMood, goal, setGoal, finish }) {
 }
 
 /* ============================ HOME ============================ */
-function Home({ streak, minutes, done, pro, openSession, goExplore, openPaywall }) {
+function Home({ name, goal, mood, streak, minutes, done, pro, openSession, goExplore, openPaywall }) {
   const { hi, moment } = greeting();
-  const featured = SESSIONS.find((s) => s.m === moment && (!s.premium || pro)) || SESSIONS[0];
+  const g = GOAL_MAP[goal]; // pilar prioritario según la meta del onboarding
+
+  // El destacado intenta: pilar de la meta + momento del día > pilar de la meta > momento del día
+  const featured =
+    (g && SESSIONS.find((s) => s.p === g.pillar && s.m === moment && (!s.premium || pro))) ||
+    (g && SESSIONS.find((s) => s.p === g.pillar && (!s.premium || pro))) ||
+    SESSIONS.find((s) => s.m === moment && (!s.premium || pro)) ||
+    SESSIONS[0];
   const fp = PILLARS[featured.p];
+
+  // Sugerencia según el ánimo elegido en el onboarding
+  const moodPick = mood
+    ? SESSIONS.find((s) => s.mood && s.mood.includes(mood) && s.id !== featured.id)
+    : null;
+  const mp = moodPick ? PILLARS[moodPick.p] : null;
+
+  // Recomendadas: del pilar de la meta (si hay), si no, una muestra general
+  const recommended = (g ? SESSIONS.filter((s) => s.p === g.pillar) : SESSIONS.slice(4, 8))
+    .filter((s) => s.id !== featured.id)
+    .slice(0, 4);
 
   return (
     <div style={page.scroll} className="fade-in">
       <div style={{ padding: "52px 22px 14px" }}>
-        <p style={home.hi}>{hi}, amigo</p>
+        <p style={home.hi}>{hi}{name ? `, ${name}` : ", amigo"}</p>
         <h1 style={home.title}>Tu momento de hoy</h1>
       </div>
 
@@ -245,12 +294,28 @@ function Home({ streak, minutes, done, pro, openSession, goExplore, openPaywall 
         })}
       </div>
 
+      {moodPick && (
+        <>
+          <div style={{ padding: "26px 22px 8px" }}><p style={home.sectionLabel}>Porque hoy te sientes {mood.toLowerCase()}</p></div>
+          <div style={{ padding: "0 22px" }}>
+            <button onClick={() => openSession(moodPick)} style={{ ...home.moodCard, borderColor: mp.ink + "33" }}>
+              <div style={{ ...row.thumb, background: grad(mp.grad) }}><span style={{ fontSize: 17 }}>♪</span></div>
+              <div style={{ flex: 1, textAlign: "left", minWidth: 0 }}>
+                <p style={row.title}>{moodPick.t}</p>
+                <p style={row.meta}>{FMT[moodPick.f]} · {moodPick.d} min · {mp.name}</p>
+              </div>
+              <span style={{ color: mp.ink, fontSize: 22, paddingRight: 6 }}>›</span>
+            </button>
+          </div>
+        </>
+      )}
+
       <div style={{ padding: "24px 22px 8px", display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
-        <p style={home.sectionLabel}>Para ti</p>
+        <p style={home.sectionLabel}>{g ? `Para ${g.label}` : "Para ti"}</p>
         <button onClick={goExplore} style={home.seeAll}>Ver todo</button>
       </div>
       <div style={{ padding: "0 22px 12px" }}>
-        {SESSIONS.slice(4, 8).map((s) => <SessionRow key={s.id} s={s} pro={pro} onClick={() => openSession(s)} />)}
+        {recommended.map((s) => <SessionRow key={s.id} s={s} pro={pro} onClick={() => openSession(s)} />)}
       </div>
 
       {!pro && (
@@ -272,8 +337,20 @@ function Home({ streak, minutes, done, pro, openSession, goExplore, openPaywall 
 /* ============================ EXPLORE ============================ */
 function Explore({ pro, openSession }) {
   const [active, setActive] = useState("mental");
+  const [query, setQuery] = useState("");
+  const [fmt, setFmt] = useState("todos"); // todos | corto | largo
   const p = PILLARS[active];
-  const list = SESSIONS.filter((s) => s.p === active);
+
+  const searching = query.trim().length > 0;
+  const norm = (s) => s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  const q = norm(query.trim());
+
+  let list = searching
+    ? SESSIONS.filter((s) => norm(s.t).includes(q) || norm(s.desc).includes(q) || norm(PILLARS[s.p].name).includes(q))
+    : SESSIONS.filter((s) => s.p === active);
+
+  if (fmt === "corto") list = list.filter((s) => s.d <= 6);
+  if (fmt === "largo") list = list.filter((s) => s.d > 6);
 
   return (
     <div style={page.scroll} className="fade-in">
@@ -282,21 +359,45 @@ function Explore({ pro, openSession }) {
         <p style={home.hi}>Cuatro caminos de vuelta a tu calma</p>
       </div>
 
-      <div style={explore.tabs}>
-        {Object.entries(PILLARS).map(([k, v]) => (
-          <button key={k} onClick={() => setActive(k)} style={{ ...explore.tab, background: active === k ? grad(v.grad) : "#fff", color: active === k ? "#fff" : "#3A4A3E", borderColor: active === k ? "transparent" : "rgba(46,83,57,0.12)" }}>{v.name}</button>
-        ))}
-      </div>
-
-      <div style={{ padding: "4px 22px 10px" }}>
-        <div style={{ ...explore.pillarHead, background: p.soft }}>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={p.ink} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d={p.icon} /></svg>
-          <span style={{ color: p.ink }}>{p.tag}</span>
+      <div style={{ padding: "10px 22px 4px" }}>
+        <div style={explore.searchBox}>
+          <span style={{ color: "rgba(46,83,57,.5)", fontSize: 16 }}>⌕</span>
+          <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Buscar sesión, tema o pilar" style={explore.searchInput} />
+          {searching && <button onClick={() => setQuery("")} style={explore.clear}>✕</button>}
         </div>
       </div>
 
-      <div style={{ padding: "0 22px 24px" }}>
-        {list.map((s) => <SessionRow key={s.id} s={s} pro={pro} onClick={() => openSession(s)} />)}
+      {!searching && (
+        <div style={explore.tabs}>
+          {Object.entries(PILLARS).map(([k, v]) => (
+            <button key={k} onClick={() => setActive(k)} style={{ ...explore.tab, background: active === k ? grad(v.grad) : "#fff", color: active === k ? "#fff" : "#3A4A3E", borderColor: active === k ? "transparent" : "rgba(46,83,57,0.12)" }}>{v.name}</button>
+          ))}
+        </div>
+      )}
+
+      <div style={explore.filterRow}>
+        {[["todos", "Todas"], ["corto", "Cortas ≤6 min"], ["largo", "Largas"]].map(([k, lbl]) => (
+          <button key={k} onClick={() => setFmt(k)} style={{ ...explore.chip, ...(fmt === k ? explore.chipOn : {}) }}>{lbl}</button>
+        ))}
+      </div>
+
+      {!searching && (
+        <div style={{ padding: "4px 22px 10px" }}>
+          <div style={{ ...explore.pillarHead, background: p.soft }}>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={p.ink} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d={p.icon} /></svg>
+            <span style={{ color: p.ink }}>{p.tag}</span>
+          </div>
+        </div>
+      )}
+
+      <div style={{ padding: "4px 22px 24px" }}>
+        {list.length > 0 ? (
+          list.map((s) => <SessionRow key={s.id} s={s} pro={pro} onClick={() => openSession(s)} />)
+        ) : (
+          <p style={{ textAlign: "center", color: "rgba(46,48,39,.5)", fontSize: 14, padding: "30px 0" }}>
+            No encontramos sesiones. Prueba otra palabra.
+          </p>
+        )}
       </div>
     </div>
   );
@@ -316,6 +417,42 @@ function SessionRow({ s, pro, onClick }) {
       </div>
       {locked ? <span style={{ ...row.lock, color: p.ink }}>❀</span> : <span style={row.go}>›</span>}
     </button>
+  );
+}
+
+/* ============================ DETAIL ============================ */
+function Detail({ session, onClose, onStart }) {
+  const p = PILLARS[session.p];
+  const momentLabel = (MOMENTS.find((mo) => mo.key === session.m) || {}).label || "";
+  return (
+    <div style={{ ...detailS.wrap, background: `linear-gradient(160deg, ${p.grad[0]}, ${p.grad[1]})` }} className="slide-up">
+      <Leaf size={200} color="rgba(255,255,255,0.1)" style={{ position: "absolute", top: -30, right: -40, transform: "rotate(30deg)" }} />
+      <div style={detailS.top}>
+        <button onClick={onClose} style={detailS.close}>✕</button>
+        <span style={detailS.topTag}>{p.name} · {momentLabel}</span>
+        <span style={{ width: 34 }} />
+      </div>
+
+      <div style={detailS.body}>
+        <div className="grow" style={detailS.orb}>
+          <span style={{ fontSize: 30, color: "#fff" }}>{{ audio: "♪", video: "▶", texto: "✎" }[session.f]}</span>
+        </div>
+        <h2 style={detailS.title}>{session.t}</h2>
+        <div style={detailS.meta}>
+          <span>{FMT[session.f]}</span><span style={detailS.dot}>·</span>
+          <span>{session.d} min</span><span style={detailS.dot}>·</span>
+          <span>{p.name}</span>
+        </div>
+        <p style={detailS.desc}>{session.desc}</p>
+        <p style={detailS.tag}>{p.tag}</p>
+      </div>
+
+      <div style={detailS.footer}>
+        <button style={{ ...btn.primary, background: "#fff", color: forest }} onClick={() => onStart(session)}>
+          ▶ Comenzar ({session.d} min)
+        </button>
+      </div>
+    </div>
   );
 }
 
@@ -589,6 +726,7 @@ const ob = {
   dotOn: { background: forest },
   center: { flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", paddingBottom: 40 },
   logo: { width: 96, height: 96, objectFit: "contain", marginBottom: 18, filter: "drop-shadow(0 6px 14px rgba(46,83,57,.18))" },
+  input: { width: "100%", padding: "15px 18px", borderRadius: 16, border: "1px solid rgba(46,83,57,.18)", background: "#fff", fontSize: 15, color: ink, marginBottom: 14, outline: "none", fontFamily: BODY, textAlign: "center" },
   credit: { marginTop: 22, fontSize: 11.5, letterSpacing: 0.6, color: "rgba(36,48,39,.5)", fontWeight: 500 },
   sun: { width: 120, height: 120, borderRadius: "50%", background: "radial-gradient(circle at 38% 32%, #9CCB7B, #4A8B5F 55%, #2E5339)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 16px 40px rgba(46,83,57,.4)", marginBottom: 32 },
   bigTitle: { fontFamily: FS, fontSize: 48, fontWeight: 600, lineHeight: 1, margin: "0 0 18px", color: forest, letterSpacing: -0.5 },
@@ -624,12 +762,19 @@ const home = {
   momentLabel: { fontSize: 13, fontWeight: 700, color: forest },
   momentSub: { fontSize: 11, color: "rgba(46,48,39,.5)" },
   proBanner: { position: "relative", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, width: "100%", padding: "16px 20px", borderRadius: 20, background: "linear-gradient(135deg,#F3D77E,#E8B964)", boxShadow: "0 14px 28px rgba(224,136,59,.28)" },
+  moodCard: { display: "flex", alignItems: "center", gap: 14, width: "100%", padding: "11px 12px", borderRadius: 18, background: "#fff", border: "1px solid", boxShadow: "0 4px 12px rgba(46,83,57,.04)" },
 };
 
 const explore = {
   tabs: { display: "flex", gap: 8, padding: "16px 22px", overflowX: "auto" },
   tab: { flex: "0 0 auto", padding: "9px 18px", borderRadius: 30, fontSize: 13.5, fontWeight: 600, border: "1px solid", boxShadow: "0 4px 10px rgba(46,83,57,.05)" },
   pillarHead: { display: "flex", alignItems: "center", gap: 10, padding: "12px 16px", borderRadius: 16, fontSize: 13.5, fontWeight: 600 },
+  searchBox: { display: "flex", alignItems: "center", gap: 10, background: "#fff", border: "1px solid rgba(46,83,57,.14)", borderRadius: 16, padding: "12px 16px", boxShadow: "0 4px 12px rgba(46,83,57,.04)" },
+  searchInput: { flex: 1, border: "none", outline: "none", background: "transparent", fontSize: 14.5, color: ink, fontFamily: BODY },
+  clear: { background: "none", color: "rgba(46,83,57,.5)", fontSize: 13 },
+  filterRow: { display: "flex", gap: 8, padding: "10px 22px 4px", overflowX: "auto" },
+  chip: { flex: "0 0 auto", padding: "7px 14px", borderRadius: 20, fontSize: 12.5, fontWeight: 600, background: "#fff", color: "rgba(46,83,57,.7)", border: "1px solid rgba(46,83,57,.12)" },
+  chipOn: { background: forest, color: "#fff", border: "1px solid " + forest },
 };
 
 const row = {
@@ -657,6 +802,21 @@ const player = {
   btnRow: { display: "flex", alignItems: "center", justifyContent: "center", gap: 28 },
   skip: { background: "none", color: "rgba(255,255,255,.9)", fontSize: 13, fontWeight: 700 },
   play: { width: 72, height: 72, borderRadius: "50%", background: "#fff", color: forest, fontSize: 20, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 10px 26px rgba(0,0,0,.2)" },
+};
+
+const detailS = {
+  wrap: { position: "absolute", inset: 0, zIndex: 28, display: "flex", flexDirection: "column", color: "#fff", overflow: "hidden" },
+  top: { display: "flex", alignItems: "center", justifyContent: "space-between", padding: "54px 22px 0", position: "relative", zIndex: 2 },
+  close: { width: 34, height: 34, borderRadius: "50%", background: "rgba(255,255,255,.2)", color: "#fff", fontSize: 14 },
+  topTag: { fontSize: 12.5, letterSpacing: 1, textTransform: "uppercase", opacity: .9, fontWeight: 700 },
+  body: { flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "0 34px", position: "relative", zIndex: 2 },
+  orb: { width: 120, height: 120, borderRadius: "50%", background: "rgba(255,255,255,.18)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 28, border: "1px solid rgba(255,255,255,.3)" },
+  title: { fontFamily: FS, fontSize: 32, fontWeight: 600, margin: "0 0 12px", lineHeight: 1.15 },
+  meta: { display: "flex", alignItems: "center", gap: 8, fontSize: 13, opacity: .9, marginBottom: 18, fontWeight: 500 },
+  dot: { opacity: .6 },
+  desc: { fontSize: 15.5, lineHeight: 1.65, opacity: .95, maxWidth: 300, marginBottom: 16 },
+  tag: { fontSize: 13, opacity: .75, fontStyle: "italic" },
+  footer: { padding: "0 30px 46px", position: "relative", zIndex: 2 },
 };
 
 const prof = {
