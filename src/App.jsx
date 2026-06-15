@@ -39,24 +39,24 @@ const PILLARS = {
 const FMT = { audio: "Audio", video: "Video", texto: "Lectura" };
 
 const SESSIONS = [
-  { id: 1, t: "Recibe el día despierto", p: "mental", m: "mañana", f: "audio", d: 5, premium: false,url: "/audios/dormirsergio.mp3", desc: "Aclara la mente antes de que el día te llene la cabeza." },
-  { id: 2, t: "Deja pasar los pensamientos", p: "mental", m: "pausa", f: "audio", d: 7, premium: true,url: "/audios/dormirsergio.mp3", desc: "Como hojas en un río: míralos pasar sin sujetarlos." },
-  { id: 3, t: "Raíces para concentrarte", p: "mental", m: "tarde", f: "audio", d: 10, premium: true,url: "/audios/dormirsergio.mp3", desc: "Vuelve al foco cuando la tarde te dispersa." },
-  { id: 4, t: "Silencio antes de dormir", p: "mental", m: "noche", f: "texto", d: 4, premium: false,url: "/audios/dormirsergio.mp3", desc: "Una lectura breve para bajar el ruido mental." }, 
-  { id: 5, t: "Saluda lo que sientes", p: "emocional", m: "mañana", f: "audio", d: 6, premium: true,url: "/audios/dormirsergio.mp3", desc: "Tu estrés trae un mensaje. Escúchalo sin miedo." },
-  { id: 6, t: "Respira la inquietud", p: "emocional", m: "pausa", f: "audio", d: 5, premium: false,url: "/audios/dormirsergio.mp3", desc: "Calma el cuerpo cuando la ansiedad aprieta." },
-  { id: 7, t: "Carta a tu yo cansado", p: "emocional", m: "tarde", f: "texto", d: 8, premium: true,url: "/audios/dormirsergio.mp3", desc: "Un ejercicio de escritura amable contigo mismo." },
-  { id: 8, t: "Tres gracias", p: "emocional", m: "noche", f: "texto", d: 3, premium: falseurl: "/audios/dormirsergio.mp3", desc: "Tres respiraciones, tres motivos, y a descansar." },
+  { id: 1, t: "Recibe el día despierto", p: "mental", m: "mañana", f: "audio", d: 5, premium: false, url: "/audios/dormirsergio.mp3", desc: "Aclara la mente antes de que el día te llene la cabeza." },
+  { id: 2, t: "Deja pasar los pensamientos", p: "mental", m: "pausa", f: "audio", d: 7, premium: true, url: "/audios/dormirsergio.mp3", desc: "Como hojas en un río: míralos pasar sin sujetarlos." },
+  { id: 3, t: "Raíces para concentrarte", p: "mental", m: "tarde", f: "audio", d: 10, premium: true, url: "/audios/dormirsergio.mp3", desc: "Vuelve al foco cuando la tarde te dispersa." },
+  { id: 4, t: "Silencio antes de dormir", p: "mental", m: "noche", f: "texto", d: 4, premium: false, url: "/audios/dormirsergio.mp3", desc: "Una lectura breve para bajar el ruido mental." }, 
+  { id: 5, t: "Saluda lo que sientes", p: "emocional", m: "mañana", f: "audio", d: 6, premium: true, url: "/audios/dormirsergio.mp3", desc: "Tu estrés trae un mensaje. Escúchalo sin miedo." },
+  { id: 6, t: "Respira la inquietud", p: "emocional", m: "pausa", f: "audio", d: 5, premium: false, url: "/audios/dormirsergio.mp3", desc: "Calma el cuerpo cuando la ansiedad aprieta." },
+  { id: 7, t: "Carta a tu yo cansado", p: "emocional", m: "tarde", f: "texto", d: 8, premium: true, url: "/audios/dormirsergio.mp3", desc: "Un ejercicio de escritura amable contigo mismo." },
+  { id: 8, t: "Tres gracias", p: "emocional", m: "noche", f: "texto", d: 3, premium: false, url: "/audios/dormirsergio.mp3", desc: "Tres respiraciones, tres motivos, y a descansar." },
 
-  { id: 9, t: "Despierta el cuerpo", p: "fisico", m: "mañana", f: "video", d: 8, premium: true,url: "/audios/6segmarcelo.mp3", desc: "Movimientos suaves para activarte como una planta al sol." },
-  { id: 10, t: "Respiración 4·7·8", p: "fisico", m: "pausa", f: "audio", d: 4, premium: false,url: "/audios/6segmarcelo.mp3", desc: "La técnica que serena el sistema nervioso en minutos." },
-  { id: 11, t: "Suelta de la cabeza a los pies", p: "fisico", m: "tarde", f: "video", d: 12,premium: true,url: "/audios/6segmarcelo.mp3", desc: "Relajación muscular progresiva, capa por capa." 
-  { id: 12, t: "Bosque para dormir", p: "fisico", m: "noche", f: "audio", d: 15, premium: true,url: "/audios/6segmarcelo.mp3", desc: "Sonidos del bosque que te llevan al sueño profundo." },
+  { id: 9, t: "Despierta el cuerpo", p: "fisico", m: "mañana", f: "video", d: 8, premium: true, url: "/audios/6segmarcelo.mp3", desc: "Movimientos suaves para activarte como una planta al sol." },
+  { id: 10, t: "Respiración 4·7·8", p: "fisico", m: "pausa", f: "audio", d: 4, premium: false, url: "/audios/6segmarcelo.mp3", desc: "La técnica que serena el sistema nervioso en minutos." },
+  { id: 11, t: "Suelta de la cabeza a los pies", p: "fisico", m: "tarde", f: "video", d: 12,premium: true, url: "/audios/6segmarcelo.mp3", desc: "Relajación muscular progresiva, capa por capa." 
+  { id: 12, t: "Bosque para dormir", p: "fisico", m: "noche", f: "audio", d: 15, premium: true, url: "/audios/6segmarcelo.mp3", desc: "Sonidos del bosque que te llevan al sueño profundo." },
 
-  { id: 13, t: "Savia de la mañana", p: "energetico", m: "mañana", f: "audio", d: 6, premium: false,url: "/audios/6segmarcelo.mp3", desc: "Despierta tu energía vital para el día que empieza." },
-  { id: 14, t: "Vuelve a tu centro", p: "energetico", m: "pausa", f: "audio", d: 10, premium: true,url: "/audios/6segmarcelo.mp3", desc: "Una pausa para reequilibrar tu energía y centrarte." },
-  { id: 15, t: "Segundo aire", p: "energetico", m: "tarde", f: "video", d: 9, premium: true,url: "/audios/6segmarcelo.mp3",. desc: "Reactívate cuando la tarde te pesa." },
-  { id: 16, t: "Apaga el día con calma", p: "energetico", m: "noche", f: "audio", d: 7, premium: true,url: "/audios/6segmarcelo.mp3", desc: "Baja revoluciones y suelta la energía acumulada." },
+  { id: 13, t: "Savia de la mañana", p: "energetico", m: "mañana", f: "audio", d: 6, premium: false, url: "/audios/6segmarcelo.mp3", desc: "Despierta tu energía vital para el día que empieza." },
+  { id: 14, t: "Vuelve a tu centro", p: "energetico", m: "pausa", f: "audio", d: 10, premium: true, url: "/audios/6segmarcelo.mp3", desc: "Una pausa para reequilibrar tu energía y centrarte." },
+  { id: 15, t: "Segundo aire", p: "energetico", m: "tarde", f: "video", d: 9, premium: true, url: "/audios/6segmarcelo.mp3",. desc: "Reactívate cuando la tarde te pesa." },
+  { id: 16, t: "Apaga el día con calma", p: "energetico", m: "noche", f: "audio", d: 7, premium: true, url: "/audios/6segmarcelo.mp3", desc: "Baja revoluciones y suelta la energía acumulada." },
 ];
 
 const MOMENTS = [
