@@ -50,7 +50,7 @@ const SESSIONS = [
   { id: 9, t: "Despierta el cuerpo", p: "fisico", m: "mañana", f: "video", d: 8, premium: true, url: "/audios/6segmarcelo.mp3", desc: "Movimientos suaves para activarte como una planta al sol." },
   { id: 10, t: "Respiración 4·7·8", p: "fisico", m: "pausa", f: "audio", d: 4, premium: false, url: "/audios/6segmarcelo.mp3", desc: "La técnica que serena el sistema nervioso en minutos." },
   { id: 11, t: "Suelta de la cabeza a los pies", p: "fisico", m: "tarde", f: "video", d: 12, premium: true, url: "/audios/6segmarcelo.mp3", desc: "Relajación muscular progresiva, capa por capa." },
-  { id: 12, t: "Bosque para dormir", p: "fisico", m: "noche", f: "audio", d: 15, premium: true, url: "/audios/6segmarcelo.mp3", desc: "Sonidos del bosque que te llevan al sueño profundo." },
+  { id: 11, t: "Suelta de la cabeza a los pies", p: "fisico", m: "tarde", f: "video", d: 12, premium: true, url: "/audios/6segmarcelo.mp3", desc: "Relajación muscular progresiva, capa por capa." },
   { id: 13, t: "Savia de la mañana", p: "energetico", m: "mañana", f: "audio", d: 6, premium: false, url: "/audios/6segmarcelo.mp3", desc: "Despierta tu energía vital para el día que empieza." },
   { id: 14, t: "Vuelve a tu centro", p: "energetico", m: "pausa", f: "audio", d: 10, premium: true, url: "/audios/6segmarcelo.mp3", desc: "Una pausa para reequilibrar tu energía y centrarte." },
   { id: 15, t: "Segundo aire", p: "energetico", m: "tarde", f: "video", d: 9, premium: true, url: "/audios/6segmarcelo.mp3", desc: "Reactívate cuando la tarde te pesa." },
